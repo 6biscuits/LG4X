@@ -19,8 +19,12 @@ from elements import Transition
 from elementdata import ElementData
 import faulthandler
 
-#style.use('ggplot')
-style.use('seaborn-pastel')
+try:
+    style.use('seaborn-v0_8-pastel')
+    #style.use('ggplot')
+except:
+    style.use('seaborn-pastel')
+    
 faulthandler.enable()
 
 class PrettyWidget(QtWidgets.QMainWindow):
